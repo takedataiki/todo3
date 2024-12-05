@@ -1,15 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <input
+      v-model="newTodo"
+      @keyup.enter="addTodo"
+      class="form-control"
+    >
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      newTodo: ''
+    }
+  },
+  methods: {
+    addTodo() {
+      console.log(this.newTodo)
+    }
   }
 }
 </script>
